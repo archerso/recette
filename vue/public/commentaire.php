@@ -1,9 +1,9 @@
-<h1 >Contact</h1>
-<form action="">
+
+<form for="action" method="POST">
 <div class="container row">
 <div class="mb-3">
-   
-    <label for="" class="form-label">Votre email</label>
+<h1  class="text-center">Contact</h1>
+    <label  class="form-label">Votre email</label>
     <input type="email" id="email" name="email" placeholder="remplir votre email" required>
 </div>
 

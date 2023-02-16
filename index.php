@@ -10,74 +10,84 @@
 </head>
 <body>
 <!-- http://localhost/php-initiation/recette/index-.php -->
+
+<div class="text-center ">
+
+<!-- h1 et la navbar  -->
+<header class=" row bg-success mt-2 p-3 ">
 <h1 class="text-center">Recette miam</h1>
-<header class="bg-success row mt-5">
         <nav class="navbar navbar-expand navbar-dark container">
             
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mt-2 p-3 ">
                 <li class="nav-item">
-                    <a href="recette/vue/public/accueil.php" class="nav-link">Accueil </a>
+                    <a href="index.php" class="nav-link">Accueil </a>
                 </li>
                 <li class="nav-item">
-                    <a href="recette.php" class="nav-link">La Recette de la saint valentin</a>
+                    <a href="index.php?page=recette" class="nav-link">La Recette de la saint valentin</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
 
             <li class="nav-item">
-                        <a href="" class="nav-link">Contact</a>
+                        <a href="index.php?page=contact" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Tableau Bord</a>
+                        <a href="index.php?page=tableau-bord" class="nav-link">Tableau Bord</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link">Déconnexion</a>
+                        <a href="index.php?page=deconnexion" class="nav-link">Déconnexion</a>
                     </li>
                
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link">login</a>
+                        <a href="index.php?page=login" class="nav-link">login</a>
                     </li>
             </ul>
         </nav>
     </header> 
-    <div class="container text-center">
-    <div class="row">
-        <div class="col">
+    </div>
 
-        <!-- pour les lien photo
+      <!-- pour les lien photo
 aller sur unsplash=>unspsplash random =>
 prendre les lien avec la bonne taille image
 POUR NE PAS AVOIR LA MEME IMAGE DONNE UNE FIN DIFFERENTE -->
-            <a href="https://source.unsplash.com/random/600×400"> Ma recette 1</a>
-            <p>Recette 1</p>
-            <p>lorem</p>
-        </div>
 
-        <div class="col">
-        <a href="https://source.unsplash.com/random/600×402"> Ma recette 2</a>
-            <p>Recette 2</p>
-            <p>lorem</p>
-        </div>
-
-
-        <div class="col">
-        <a href="https://source.unsplash.com/random/600×401"> Ma recette 3</a>
-            <p>Recette 3</p>
-            <p>lorem</p>
-        </div>
-    </div>
+   
 </div>
 
+        <!-- routage => url => page -->
+    <?php if(empty($_GET)) : ?>
+        <?php require "vue/public/accueil.php" ?>
+
+        <?php elseif(!empty($_GET ["page"]) && $_GET["page"] === "recette" ) : ?>
+            <?php  require " vue/public/recette.php " ?>
+
+            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " contact " ) : ?>
+            <?php  require " vue/public/commentaire.php " ?>
+
+            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " tableau-bord " ) : ?>
+            <?php  require " vue/privee/tableau-bord.php " ?>
+
+            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " logout " ) : ?>
+            <?php  require " vue/public/login.php " ?>
+
+            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " login " ) : ?>
+            <?php  require " vue/public/login.php " ?>
+
+        <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " mention " ) : ?>
+            <?php  require " vue/public/mentions-legales.php " ?>
+
+       
+
+            <?php  endif  ?>
     
   
     </section>
 
     <div>
-    <footer  class="bg-success" text="aligne-center">
-    <a href="">mention legales</a>
+    <footer  class="container text-center mt-2 p-3 bg-primary-subtle ">
+    <a href="vue/public/mentions-legales.php" >mentions legales</a>
     </footer>
     </div>
-
 </body>
 </html>
