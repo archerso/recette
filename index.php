@@ -55,27 +55,28 @@ POUR NE PAS AVOIR LA MEME IMAGE DONNE UNE FIN DIFFERENTE -->
    
 </div>
 
+<section>
         <!-- routage => url => page -->
     <?php if(empty($_GET)) : ?>
         <?php require "vue/public/accueil.php" ?>
 
         <?php elseif(!empty($_GET ["page"]) && $_GET["page"] === "recette" ) : ?>
-            <?php  require " vue/public/recette.php " ?>
+            <?php  require "vue/public/recette.php" ?>
 
-            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " contact " ) : ?>
-            <?php  require " vue/public/commentaire.php " ?>
+            <?php  elseif ( !empty( $_GET ["page"]) && $_GET ["page"] === "contact" ) : ?>
+            <?php  require "vue/public/commentaire.php" ?>
 
-            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " tableau-bord " ) : ?>
-            <?php  require " vue/privee/tableau-bord.php " ?>
+            <?php  elseif ( !empty( $_GET ["page"]) && $_GET ["page"] === "tableau-bord" ) : ?>
+            <?php  require "vue/privee/tableau-bord.php" ?>
 
-            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " logout " ) : ?>
-            <?php  require " vue/public/login.php " ?>
+            <?php  elseif ( !empty( $_GET ["page"]) && $_GET ["page"] === "logout" ) : ?>
+            <?php  require "vue/public/login.php" ?>
 
-            <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " login " ) : ?>
-            <?php  require " vue/public/login.php " ?>
+            <?php  elseif ( !empty( $_GET ["page"]) && $_GET ["page"] === "login" ) : ?>
+            <?php  require "vue/public/login.php" ?>
 
-        <?php  elseif ( !empty( $_GET [" page "]) && $_GET [" page "] === " mention " ) : ?>
-            <?php  require " vue/public/mentions-legales.php " ?>
+        <?php  elseif ( !empty( $_GET ["page"]) && $_GET ["page"] === "mention" ) : ?>
+            <?php  require "vue/public/mentions-legales.php" ?>
 
        
 
@@ -86,7 +87,7 @@ POUR NE PAS AVOIR LA MEME IMAGE DONNE UNE FIN DIFFERENTE -->
 
     <div>
     <footer  class="container text-center mt-2 p-3 bg-primary-subtle ">
-    <a href="vue/public/mentions-legales.php" >mentions legales</a>
+    <a href="index.php?page=mention" >mentions legales</a>
     </footer>
     </div>
 </body>
