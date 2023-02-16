@@ -81,8 +81,7 @@ POUR NE PAS AVOIR LA MEME IMAGE DONNE UNE FIN DIFFERENTE -->
        
 
             <?php  endif  ?>
-    
-  
+    <!-- modification email -->
     </section>
 
     <div>
